@@ -9,4 +9,8 @@
     <string name="network_unavailable_message">Network is unavailable!</string>
     <string name="pull_for_refresh_text">Pull down for new quote!</string>
     <string name="new_quote_button_text">New Quote</string>
+    <string name="initial_quote_text">Loading Quote</string>
+    <string name="splash_screen_text">RON \nSWANSON \nQUOTES</string>
+
+    <string name="banner_ad_unit_id">ca-app-pub-3940256099942544/6300978111</string>
 </resources>
