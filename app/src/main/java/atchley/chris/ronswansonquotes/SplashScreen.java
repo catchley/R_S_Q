@@ -12,6 +12,11 @@ public class SplashScreen extends Activity {
 
 
     @Override
+    public void onBackPressed() {
+        //Disabling the back button during the splash screen.
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         // TODO Auto-generated method stub
         super.onCreate(savedInstanceState);
@@ -21,22 +26,21 @@ public class SplashScreen extends Activity {
         mSplashText = (TextView) findViewById(R.id.splashScreenText);
 
 
-        Thread timerThread = new Thread(){
-            public void run(){
-                try{
-                    sleep(3000);
-                }catch(InterruptedException e){
+        Thread timerThread = new Thread() {
+            public void run() {
+                try {
+                    sleep(2000);
+                } catch (InterruptedException e) {
                     e.printStackTrace();
-                }finally{
+                } finally {
                     Intent i = new Intent(SplashScreen.this, MainActivity.class);
                     startActivity(i);
-                    overridePendingTransition(R.anim.fade_in,R.anim.fade_out);
+                    overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
                 }
             }
         };
         timerThread.start();
     }
-
 
 
     @Override
