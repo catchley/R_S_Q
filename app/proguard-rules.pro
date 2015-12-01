@@ -15,3 +15,31 @@
 #-keepclassmembers class fqcn.of.javascript.interface.for.webview {
 #   public *;
 #}
+
+-assumenosideeffects class android.util.Log {
+    public static boolean isLoggable(java.lang.String, int);
+    public static int v(...);
+    public static int i(...);
+    public static int w(...);
+    public static int d(...);
+    public static int e(...);
+}
+# Retrofit 1.X
+
+-keep class com.squareup.okhttp.** { *; }
+-keep class retrofit.** { *; }
+-keep interface com.squareup.okhttp.** { *; }
+
+-dontwarn com.squareup.okhttp.**
+-dontwarn okio.**
+-dontwarn retrofit.**
+-dontwarn rx.**
+-dontwarn org.xmlpull.v1.**
+-dontwarn com.squareup.**
+-keep class com.squareup.** { *; }
+-keep class com.google.android.gms.**{*;}
+-dontwarn com.google.android.gms.**
+
+-keepclasseswithmembers class * {
+    @retrofit.http.* <methods>;
+}
